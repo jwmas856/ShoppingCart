@@ -8,31 +8,34 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
-    Button addCodMW = findViewById(R.id.buttonCodMW);
-    Button btnCheckout = findViewById(R.id.buttonCheckout);
-    Button showShoppingCart = findViewById(R.id.buttonViewCart);
-    double totalPrice;
+import java.util.ArrayList;
 
+public class MainActivity extends AppCompatActivity {
+
+    double totalPrice;
+    String m_Stuff;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button addCodMW = findViewById(R.id.buttonCodMW);
+        Button btnCheckout = findViewById(R.id.buttonCheckout);
+        final ArrayList shoppingCart = new ArrayList();
+
         addCodMW.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 totalPrice+= 59.99;
-            }
+                shoppingCart.add("Call of Duty: Modern Warfare(2019)");
+                }
         });
-        showShoppingCart.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-            }
-        });
+
         btnCheckout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent=new Intent(MainActivity.this,ShoppingActivity.class);
+                intent.putExtra("selectedList", shoppingCart);
+                startActivity(intent);
             }
         });
 

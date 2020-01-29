@@ -48,52 +48,40 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/buttonViewCart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="55dp"
-        android:layout_marginEnd="55dp"
-        android:layout_marginBottom="9dp"
-        android:width="300sp"
-        android:text="View Cart"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonCheckout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <LinearLayout
         android:id="@+id/GameLayout"
-        android:layout_width="410dp"
-        android:layout_height="493dp"
+        android:layout_width="119dp"
+        android:layout_height="245dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/buttonViewCart"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="95dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Call of Duty: Modern Warfare(2019)"
+            android:textAlignment="center"
             android:textSize="14sp" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="71dp"
+            android:layout_width="match_parent"
             android:layout_height="109dp"
             app:srcCompat="@drawable/cod" />
 
         <TextView
             android:id="@+id/textView2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="$59.99" />
+            android:text="$59.99"
+            android:textAlignment="center" />
 
         <Button
             android:id="@+id/buttonCodMW"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Add to Cart" />
     </LinearLayout>
