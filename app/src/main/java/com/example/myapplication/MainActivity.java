@@ -36,9 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btnCheckout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,ShoppingActivity.class);
-                intent.putExtra("selectedList", shoppingCart);
-                startActivity(intent);
+                
             }
         });
 
