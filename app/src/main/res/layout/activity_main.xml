@@ -119,10 +119,11 @@
             android:textAlignment="center" />
 
         <Button
-            android:id="@+id/buttonCodMW2"
+            android:id="@+id/buttonSkyrim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Add to Cart" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -134,6 +135,34 @@
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/linearLayout"
-        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:text="Super Smash Bros Ultimate"
+            android:textAlignment="center"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="109dp"
+            app:srcCompat="@drawable/smash" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="$59.99"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/buttonSmash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add to Cart" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
