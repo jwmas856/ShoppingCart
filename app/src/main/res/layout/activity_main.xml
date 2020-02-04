@@ -21,14 +21,14 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/buttonAccessories"
+        android:id="@+id/buttonVr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
         android:layout_marginEnd="55dp"
         android:layout_marginBottom="9dp"
         android:width="300sp"
-        android:text="Accessories"
+        android:text="Vr"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonClothing"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +44,7 @@
         android:width="300sp"
         android:text="Checkout"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonAccessories"
+        app:layout_constraintBottom_toTopOf="@+id/buttonVr"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
