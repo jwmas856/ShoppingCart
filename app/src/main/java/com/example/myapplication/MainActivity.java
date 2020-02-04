@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,10 +22,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Button addCodMW = findViewById(R.id.buttonCodMW);
         Button btnCheckout = findViewById(R.id.buttonCheckout);
-        // Use a bundle with intents.
-        // https://www.youtube.com/watch?v=3YCkW7J9NP0
-        // Dont pass the ArrayList to different activities, use the bundle.
-        //1/30/29
+        if(getIntent().getExtras() != null){
+            Bundle bundle = getIntent().getExtras();
+            ArrayList arrayList =bundle.getStringArrayList("list");
+            shoppingCart = arrayList;
+
+        }
         addCodMW.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -36,9 +39,24 @@ public class MainActivity extends AppCompatActivity {
         btnCheckout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                
+                Intent intent = new Intent(MainActivity.this, ShoppingActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putDouble("totalCost", totalPrice);
+                bundle.putStringArrayList("itemNames", shoppingCart);
+                intent.putExtras(bundle);
+                startActivity(intent);
             }
         });
 
+    }
+
+    public void AddSkyrim(View view) {
+        shoppingCart.add("Skyrim Vr (Steam)     | $39.99");
+        totalPrice+= 39.99;
+    }
+
+    public void AddSmash(View view) {
+        shoppingCart.add("Super Smash Bros Ultimate     | $59.99");
+        totalPrice+= 59.99;
     }
 }
