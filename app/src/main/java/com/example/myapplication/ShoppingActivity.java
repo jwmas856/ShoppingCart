@@ -11,25 +11,27 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ShoppingActivity extends AppCompatActivity {
-    ArrayList arrayList=new ArrayList();
-    String condition="SelectedItemsFromShoppingCart";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping);
-        arrayList= (ArrayList) getIntent().getSerializableExtra("selectedList");
-        TextView t1 = findViewById(R.id.textView3);
+        ArrayList arrayList = new ArrayList();
+        TextView textview20 = findViewById(R.id.textView20);
+        TextView textView21 = findViewById(R.id.textView21);
+
+        Intent intent = getIntent();
+        arrayList = intent.getStringArrayListExtra("itemNames");
         for(int i = 0; i < arrayList.size(); i++){
-            t1.append(arrayList.get(i).toString() + "\n");
+            textview20.append(arrayList.get(i) +"\n");
         }
+        double total = intent.getDoubleExtra("totalCost",0);
+        textView21.setText("Subtotal: " + total + "\n" + "Total Price: " + Math.round(total * 1.076) );
+
         Button backButton = findViewById(R.id.button);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(ShoppingActivity.this, MainActivity.class);
-                intent.putExtra("selectedList", arrayList);
-                startActivity(intent);
+
             }
         });
     }

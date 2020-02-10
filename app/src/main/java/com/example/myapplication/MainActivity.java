@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     ArrayList shoppingCart = new ArrayList();
     double totalPrice;
     String m_Stuff;
-    String condition="SelectedItemsFromShoppingCart";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnCheckout = findViewById(R.id.buttonCheckout);
         if(getIntent().getExtras() != null){
             Bundle bundle = getIntent().getExtras();
-            ArrayList arrayList =bundle.getStringArrayList("list");
+            ArrayList arrayList =bundle.getStringArrayList("itemList");
             shoppingCart = arrayList;
 
         }
