@@ -11,11 +11,11 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ShoppingActivity extends AppCompatActivity {
+    ArrayList arrayList = new ArrayList();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping);
-        ArrayList arrayList = new ArrayList();
         TextView textview20 = findViewById(R.id.textView20);
         TextView textView21 = findViewById(R.id.textView21);
 
@@ -31,7 +31,11 @@ public class ShoppingActivity extends AppCompatActivity {
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent2 = new Intent(ShoppingActivity.this, MainActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putStringArrayList("itemNames",arrayList);
+                intent2.putExtras(bundle);
+                startActivity(intent2);
             }
         });
     }

@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
             Bundle bundle = getIntent().getExtras();
             ArrayList arrayList =bundle.getStringArrayList("itemList");
             shoppingCart = arrayList;
+            Double total = bundle.getDouble("totalCost");
+            totalPrice = total;
 
         }
         addCodMW.setOnClickListener(new View.OnClickListener(){
